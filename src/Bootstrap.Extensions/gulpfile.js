@@ -16,8 +16,13 @@ gulp.task("default", function () {
 gulp.task("clean:css", function () {
     return del("./wwwroot/css/**/*");
 });
+gulp.task("clean:js", function () {
+    return del("./wwwroot/js/**/*");
+});
 gulp.task("clean:dist", function () {
-    return del("../../dist/**/*", { force: true });
+    return del([
+        "../../dist/**/*"
+    ], { force: true });
 });
 
 
@@ -32,6 +37,20 @@ gulp.task("compile:sass", function () {
         .pipe(gulp.dest("./wwwroot/css/"));
 });
 
+gulp.task("min:js", function () {
+    gulp.src([
+        "./wwwroot/js/*.js",
+        "!./wwwroot/js/*.min.js"
+    ])
+        .pipe(gulp.dest("../../dist/js/"))
+        .pipe(uglify())
+        .pipe(rename({
+            extname: ".min.js"
+        }))
+        .pipe(gulp.dest("./wwwroot/js/"))
+        .pipe(gulp.dest("../../dist/js/"));
+});
+
 gulp.task("copy:css", function () {
     gulp.src("./wwwroot/css/**/*")
         .pipe(gulp.dest("../../dist/css/"));
@@ -42,5 +61,5 @@ gulp.task("copy:css", function () {
 
 
 gulp.task("clean", ["clean:css", "clean:dist"]);
-gulp.task("beforeBuild", ["compile:sass"]);
+gulp.task("beforeBuild", ["compile:sass", "min:js"]);
 gulp.task("afterBuild", ["copy:css"]);

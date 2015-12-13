@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Bootstrap.Browserfix", "src\Bootstrap.Browserfix\Bootstrap.Browserfix.xproj", "{F5CC9E88-5D8D-48CB-AFEF-5EFC91C4BB53}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Bootstrap.Extensions", "src\Bootstrap.Extensions\Bootstrap.Extensions.xproj", "{F5CC9E88-5D8D-48CB-AFEF-5EFC91C4BB53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
