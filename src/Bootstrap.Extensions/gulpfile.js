@@ -52,7 +52,7 @@ gulp.task("min:js", function () {
 });
 
 gulp.task("copy:css", function () {
-    gulp.src("./wwwroot/css/**/*")
+    gulp.src("./wwwroot/css/**/develore-*.css")
         .pipe(gulp.dest("../../dist/css/"));
 });
 
