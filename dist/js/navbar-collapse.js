@@ -6,7 +6,7 @@ var develore;
         (function (extensions) {
             function collapse(e) {
                 var elem = $(e.target);
-                if (elem.parents(".navbar-form").length == 0) {
+                if (elem.parents(".navbar-form, .dropdown").length == 0) {
                     $(".navbar-collapse.collapse.in").collapse("hide");
                 }
             }
